@@ -1,0 +1,26 @@
+{
+  "name": "requiret",
+  "version": "1.0.0",
+  "description": "Require module as Worker Thread",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelnovaes/requiret.git"
+  },
+  "keywords": [
+    "thread",
+    "worker",
+    "parallel",
+    "require",
+    "worker_threads"
+  ],
+  "author": "Samuel Novaes <samuel.novaes.96@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelnovaes/requiret/issues"
+  },
+  "homepage": "https://github.com/samuelnovaes/requiret#readme"
+}
