@@ -39,7 +39,7 @@ readfile('test.txt')
 ```
 
 # Running
-You must run node with the --experimental-worker flag enabled.
+You must run node with the `--experimental-worker` flag enabled.
 
 ```
 node --experimental-worker index.js
