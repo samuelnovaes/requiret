@@ -2,23 +2,19 @@ const { Worker, isMainThread, parentPort, workerData } = require('worker_threads
 
 if (isMainThread) {
 	const path = require('path')
-	module.exports = file => {
-		return (...args) => {
-			return new Promise((resolve, reject) => {
-				const worker = new Worker(__filename, {
-					workerData: {
-						file: path.resolve(file),
-						args
-					}
-				})
-				worker.on('message', resolve)
-				worker.on('error', reject)
-				worker.on('exit', code => {
-					if(code !== 0) reject(new Error(`Worker stopped with exit code ${code}`))
-				})
-			})
-		}
-	}
+	module.exports = file => (...args) => new Promise((resolve, reject) => {
+		const worker = new Worker(__filename, {
+			workerData: {
+				file: path.resolve(file),
+				args
+			}
+		})
+		worker.on('message', resolve)
+		worker.on('error', reject)
+		worker.on('exit', code => {
+			if(code !== 0) reject(new Error(`Worker stopped with exit code ${code}`))
+		})
+	})
 }
 else {
 	const func = require(workerData.file)

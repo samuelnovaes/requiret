@@ -1,5 +1,5 @@
 # requiret
-Require module as Worker Thread in Node.js
+Require a module as a Worker Thread in Node.js
 
 # Requirements
 
