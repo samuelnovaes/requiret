@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/samuelnovaes/requiret.git"
+		"url": "https://github.com/samuelnovaes/requiret.git"
 	},
 	"keywords": [
 		"thread",
