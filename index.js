@@ -5,7 +5,7 @@ if (wt.isMainThread) {
 	module.exports = file => (...args) => new Promise((resolve, reject) => {
 		const worker = new wt.Worker(__filename, {
 			workerData: {
-				file: path.parse(file).dir == '' ? file : path.resolve(file),
+				file: /^\.{0,2}\//.test(file) ? path.resolve(file) : file,
 				args
 			}
 		})

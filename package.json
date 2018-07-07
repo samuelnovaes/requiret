@@ -1,6 +1,6 @@
 {
 	"name": "requiret",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Require module as Worker Thread",
 	"main": "index.js",
 	"scripts": {
