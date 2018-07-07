@@ -1,4 +1,4 @@
-# requiret
+# requiret (Require Threads)
 Require a module as a Worker Thread in Node.js
 
 # Requirements

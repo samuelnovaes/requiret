@@ -1,11 +1,11 @@
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads')
+const wt = require('worker_threads')
 
-if (isMainThread) {
+if (wt.isMainThread) {
 	const path = require('path')
 	module.exports = file => (...args) => new Promise((resolve, reject) => {
-		const worker = new Worker(__filename, {
+		const worker = new wt.Worker(__filename, {
 			workerData: {
-				file: path.resolve(file),
+				file: path.parse(file).dir == '' ? file : path.resolve(file),
 				args
 			}
 		})
@@ -17,10 +17,9 @@ if (isMainThread) {
 	})
 }
 else {
-	const func = require(workerData.file)
-	func(...workerData.args)
+	require(wt.workerData.file)(...wt.workerData.args)
 	.then(data => {
-		parentPort.postMessage(data)
+		wt.parentPort.postMessage(data)
 	})
 	.catch(error => {
 		throw error

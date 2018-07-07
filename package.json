@@ -1,6 +1,6 @@
 {
 	"name": "requiret",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Require module as Worker Thread",
 	"main": "index.js",
 	"scripts": {
@@ -22,5 +22,5 @@
 	"bugs": {
 		"url": "https://github.com/samuelnovaes/requiret/issues"
 	},
-	"homepage": "https://github.com/samuelnovaes/requiret#readme"
+	"homepage": "https://github.com/samuelnovaes/requiret/blob/master/README.md"
 }
